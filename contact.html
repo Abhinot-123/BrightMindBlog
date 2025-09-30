@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+ 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow sticky-top">
     <div class="container">
       <a class="navbar-brand fw-bold" href="index.html">BrightMind Blog</a>
@@ -25,27 +26,43 @@
     </div>
   </nav>
 
-  <section class="py-5">
+  <section class="py-5 bg-light">
     <div class="container">
-      <h2 class="section-title text-center mb-4">Get in Touch</h2>
-      <form id="contactForm" class="mx-auto" style="max-width: 600px;" novalidate>
-        <div class="mb-3">
-          <label for="name" class="form-label fw-semibold">Name</label>
-          <input type="text" class="form-control" id="name" required>
-          <div class="invalid-feedback">Please enter your name.</div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-body p-5">
+              <h2 class="text-center mb-3 fw-bold text-primary">Get in Touch</h2>
+              <p class="text-center text-muted mb-4">We’d love to hear from you. Fill out the form below 👇</p>
+              <form id="contactForm" novalidate>
+                <div class="mb-3">
+                  <label for="name" class="form-label fw-semibold">Name</label>
+                  <input type="text" class="form-control form-control-lg rounded-3" id="name" placeholder="Enter your name" required>
+                  <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label fw-semibold">Email</label>
+                  <input type="email" class="form-control form-control-lg rounded-3" id="email" placeholder="Enter your email" required>
+                  <div class="invalid-feedback">Please enter a valid email.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label fw-semibold">Message</label>
+                  <textarea class="form-control form-control-lg rounded-3" id="message" rows="5" placeholder="Write your message..." required></textarea>
+                  <div class="invalid-feedback">Please enter your message.</div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg w-100 rounded-3">Send Message</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="text-center mt-4">
+            <p class="fw-semibold mb-2">Connect with us</p>
+            <a href="https://twitter.com" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill me-2">Twitter</a>
+            <a href="https://facebook.com" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill me-2">Facebook</a>
+            <a href="https://instagram.com" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill">Instagram</a>
+          </div>
         </div>
-        <div class="mb-3">
-          <label for="email" class="form-label fw-semibold">Email</label>
-          <input type="email" class="form-control" id="email" required>
-          <div class="invalid-feedback">Please enter a valid email.</div>
-        </div>
-        <div class="mb-3">
-          <label for="message" class="form-label fw-semibold">Message</label>
-          <textarea class="form-control" id="message" rows="5" required></textarea>
-          <div class="invalid-feedback">Please enter your message.</div>
-        </div>
-        <button type="submit" class="btn btn-primary btn-submit w-100">Send Message</button>
-      </form>
+      </div>
     </div>
   </section>
 
@@ -64,6 +81,3 @@
   <script src="posts.js"></script>
 </body>
 </html>
-
-
- 
