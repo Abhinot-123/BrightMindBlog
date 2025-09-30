@@ -1,5 +1,4 @@
 
-// ===================== Default Posts =====================
 const defaultPosts = [
  {
     id: 1,
@@ -48,18 +47,13 @@ const defaultPosts = [
   }
 ];
 
-
-// ===================== Local Storage Load =====================
 let posts = JSON.parse(localStorage.getItem("posts")) || [];
 if (posts.length === 0) {
   posts = defaultPosts;
   localStorage.setItem("posts", JSON.stringify(posts));
 }
 
-// ===================== Elements =====================
 const postsContainer = document.getElementById("posts-container");
-
-// Add modal elements
 const addPostForm = document.getElementById("addPostForm");
 const addTitle = document.getElementById("addTitle");
 const addAuthor = document.getElementById("addAuthor");
@@ -68,7 +62,6 @@ const addExcerpt = document.getElementById("addExcerpt");
 const addContent = document.getElementById("addContent");
 const addImage = document.getElementById("addImage");
 
-// Edit modal elements
 const editPostForm = document.getElementById("editPostForm");
 const editId = document.getElementById("editId");
 const editTitle = document.getElementById("editTitle");
@@ -78,14 +71,12 @@ const editExcerpt = document.getElementById("editExcerpt");
 const editContent = document.getElementById("editContent");
 const editImage = document.getElementById("editImage");
 
-// Bootstrap Modals
 let addModal, editModal;
 document.addEventListener("DOMContentLoaded", () => {
   addModal = new bootstrap.Modal(document.getElementById("addPostModal"));
   editModal = new bootstrap.Modal(document.getElementById("editPostModal"));
 });
 
-// ===================== Render Posts =====================
 function renderPosts() {
   postsContainer.innerHTML = "";
   posts.forEach(p => {
@@ -113,7 +104,6 @@ function renderPosts() {
   });
 }
 
-// ===================== Add Post =====================
 addPostForm.addEventListener("submit", e => {
   e.preventDefault();
 
@@ -135,7 +125,6 @@ addPostForm.addEventListener("submit", e => {
   addModal.hide();
 });
 
-// ===================== Edit Post =====================
 function openEditPost(id) {
   const post = posts.find(p => p.id === id);
   if (post) {
@@ -174,7 +163,6 @@ editPostForm.addEventListener("submit", e => {
   editModal.hide();
 });
 
-// ===================== Delete Post =====================
 function deletePost(id) {
   if (confirm("Are you sure you want to delete this post?")) {
     posts = posts.filter(p => p.id !== id);
@@ -183,7 +171,6 @@ function deletePost(id) {
   }
 }
 
-// ===================== Read Post =====================
 function readPost(id) {
   const post = posts.find(p => p.id === id);
   if (post) {
@@ -191,10 +178,8 @@ function readPost(id) {
   }
 }
 
-// ===================== Initial Render =====================
 renderPosts();
 
-// Expose globally
 window.openEditPost = openEditPost;
 window.readPost = readPost;
 window.deletePost = deletePost;
